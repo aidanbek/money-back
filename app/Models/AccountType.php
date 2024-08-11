@@ -6,6 +6,27 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
+/**
+ * 
+ *
+ * @property int $id
+ * @property string $title
+ * @property \Illuminate\Support\Carbon|null $deleted_at
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @method static \Illuminate\Database\Eloquent\Builder|AccountType newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|AccountType newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|AccountType onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder|AccountType query()
+ * @method static \Illuminate\Database\Eloquent\Builder|AccountType whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|AccountType whereDeletedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|AccountType whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|AccountType whereTitle($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|AccountType whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|AccountType withTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder|AccountType withoutTrashed()
+ * @mixin \Eloquent
+ */
 class AccountType extends Model
 {
     use SoftDeletes;

@@ -12,6 +12,7 @@
         "spatie/laravel-data": "^4.7"
     },
     "require-dev": {
+        "barryvdh/laravel-ide-helper": "^3.1",
         "fakerphp/faker": "^1.23",
         "laravel/pint": "^1.13",
         "laravel/sail": "^1.26",
@@ -46,6 +47,14 @@
             "@php artisan key:generate --ansi",
             "@php -r \"file_exists('database/database.sqlite') || touch('database/database.sqlite');\"",
             "@php artisan migrate --graceful --ansi"
+        ],
+        "ide:generate": "@php artisan ide-helper:generate",
+        "ide:meta": "@php artisan ide-helper:meta",
+        "ide:models": "@php artisan ide-helper:models --write --reset",
+        "ide": [
+            "composer ide:generate",
+            "composer ide:meta",
+            "composer ide:models"
         ]
     },
     "extra": {
