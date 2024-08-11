@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('account_id');
             $table->foreignId('payee_id');
             $table->unsignedTinyInteger('type');
-            $table->unsignedBigInteger('sort_order');
+            $table->unsignedBigInteger('sort_order')->default(0);
             $table->decimal('total', 16, 2);
             $table->boolean('online');
 

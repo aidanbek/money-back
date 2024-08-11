@@ -10,9 +10,11 @@ class Operation extends Model
 {
     use SoftDeletes;
 
+    protected $guarded = [];
+
     public $incrementing = false;
 
-    protected $keyType = 'uuid';
+    protected $keyType = 'string';
 
-    protected $primaryKey = 'uuid';
+    protected $primaryKey = 'id';
 }

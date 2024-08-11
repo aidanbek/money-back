@@ -22,7 +22,7 @@ return new class extends Migration
             $table->softDeletes();
             $table->timestamps();
 
-            $table->unique(['unit_id', 'title', 'code']);
+            $table->unique(['measure_unit_id', 'brand_id', 'clean_title', 'code']);
 
             $table->foreign('measure_unit_id')
                 ->references('id')
