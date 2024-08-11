@@ -6,5 +6,5 @@ enum CategoryTypeEnum: int
 {
     case EXPENSE = 1;
     case INCOME = 2;
-    case BOTH = 3;
+    case EXPENSE_AND_INCOME = 3;
 }

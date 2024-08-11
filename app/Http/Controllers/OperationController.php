@@ -6,7 +6,7 @@ use App\DataObjects\OperationCreate;
 use App\Enums\CategoryTypeEnum;
 use App\Enums\OperationTypeEnum;
 use App\Helpers\StringHelper;
-use App\Http\Requests\OperationCreateRequest;
+use App\Http\Requests\ExpenseOperationCreateRequest;
 use App\Models\Account;
 use App\Models\AccountType;
 use App\Models\Brand;
@@ -23,7 +23,7 @@ use Illuminate\Support\Str;
 
 class OperationController extends Controller
 {
-    public function create(OperationCreateRequest $request)
+    public function createExpense(ExpenseOperationCreateRequest $request)
     {
         $dto = OperationCreate::from($request->validated());
 

@@ -15,15 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('clean_title')->unique();
-            $table->foreignId('type_id');
+            $table->unsignedTinyInteger('type_id');
             $table->softDeletes();
             $table->timestamps();
-
-            $table->foreign('type_id')
-                ->references('id')
-                ->on('account_types')
-                ->restrictOnUpdate()
-                ->restrictOnDelete();
         });
     }
 

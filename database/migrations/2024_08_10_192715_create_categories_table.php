@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('clean_title')->unique();
-            $table->unsignedTinyInteger('type');
+            $table->unsignedTinyInteger('type_id');
             $table->unsignedBigInteger('sort_order');
             $table->softDeletes();
             $table->timestamps();
