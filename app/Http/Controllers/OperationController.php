@@ -8,7 +8,6 @@ use App\Enums\OperationTypeEnum;
 use App\Helpers\StringHelper;
 use App\Http\Requests\ExpenseOperationCreateRequest;
 use App\Models\Account;
-use App\Models\AccountType;
 use App\Models\Brand;
 use App\Models\Category;
 use App\Models\MeasureUnit;

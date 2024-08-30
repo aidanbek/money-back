@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      */
@@ -14,14 +13,23 @@ return new class extends Migration
         Schema::create('operation_products', function (Blueprint $table) {
             $table->id();
             $table->uuid('operation_id');
-            $table->foreignId('product_id');
+            $table->foreignId('product_variant_id');
             $table->foreignId('category_id');
             $table->foreignId('project_id')->nullable();
             $table->unsignedMediumInteger('quantity');
+            $table->decimal('price_per_unit', 12, 2);
             $table->decimal('price', 12, 2);
             $table->timestamps();
 
-            $table->unique(['operation_id', 'product_id', 'category_id', 'project_id'], 'operation_products_unique');
+            $table->unique(
+                [
+                    'operation_id',
+                    'product_variant_id',
+                    'category_id',
+                    'project_id'
+                ],
+                'operation_products_unique'
+            );
 
             $table->foreign('operation_id')
                 ->references('id')
@@ -29,9 +37,9 @@ return new class extends Migration
                 ->restrictOnUpdate()
                 ->restrictOnDelete();
 
-            $table->foreign('product_id')
+            $table->foreign('product_variant_id')
                 ->references('id')
-                ->on('products')
+                ->on('product_variants')
                 ->restrictOnUpdate()
                 ->restrictOnDelete();
 

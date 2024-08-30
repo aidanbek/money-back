@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
+ return new class extends Migration
 {
     /**
      * Run the migrations.
@@ -19,7 +19,7 @@ return new class extends Migration
             $table->unsignedBigInteger('sort_order')->default(0);
             $table->decimal('total', 16, 2);
             $table->boolean('online');
-
+            $table->string('check_url')->nullable();
             $table->timestamp('happened_at');
             $table->softDeletes();
             $table->timestamps();

@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('clean_title')->unique();
+            $table->string('address')->nullable();
+            $table->unsignedBigInteger('type');
             $table->softDeletes();
             $table->timestamps();
         });
