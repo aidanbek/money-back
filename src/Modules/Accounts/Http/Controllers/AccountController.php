@@ -2,6 +2,7 @@
 
 namespace Modules\Accounts\Http\Controllers;
 
+use App\Helpers\StringHelper;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Response;
@@ -18,7 +19,16 @@ class AccountController extends Controller
 
     public function store(StoreAccountRequest $request): JsonResponse
     {
-        return response()->json(Account::create($request->validated()), Response::HTTP_CREATED);
+        $data = array_merge(
+            $request->validated(),
+            [
+                'clean_title' => StringHelper::clearTitle($request->validated('title')),
+                'current_balance' => $request->validated('initial_balance'),
+                'initial_balance' => $request->validated('initial_balance'),
+            ]
+        );
+
+        return response()->json(Account::create($data), Response::HTTP_CREATED);
     }
 
     public function show(Account $account): JsonResponse

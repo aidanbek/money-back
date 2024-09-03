@@ -14,6 +14,9 @@ return new class extends Migration
         Schema::create('accounts', function (Blueprint $table) {
             $table->id();
             $table->string('title')->unique();
+            $table->string('clean_title')->unique();
+            $table->decimal('current_balance', 12, 2);
+            $table->decimal('initial_balance', 12, 2);
             $table->softDeletes();
             $table->timestamps();
         });

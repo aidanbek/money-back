@@ -23,6 +23,7 @@ class StoreAccountRequest extends FormRequest
     {
         return [
             'title' => ['required', 'string', 'max:255'],
+            'initial_balance' => ['required', 'numeric'],
         ];
     }
 }
