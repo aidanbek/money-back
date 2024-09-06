@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignId('account_id');
             $table->unsignedTinyInteger('type');
             $table->decimal('amount', 12, 2);
+            $table->text('comment')->nullable();
             $table->timestamps();
 
             $table->foreign('account_id')

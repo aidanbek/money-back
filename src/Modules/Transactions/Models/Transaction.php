@@ -15,6 +15,7 @@ class Transaction extends Model
         'account_id',
         'type',
         'amount',
+        'comment',
     ];
 
     protected $appends = [

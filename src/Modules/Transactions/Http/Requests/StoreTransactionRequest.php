@@ -16,6 +16,7 @@ class StoreTransactionRequest extends FormRequest
             'type' => ['required', 'int', Rule::enum(TransactionType::class)],
             'account_id' => ['required', 'integer'],
             'amount' => ['required', 'numeric', 'gt:0'],
+            'comment' => ['string'],
         ];
     }
 }
