@@ -24,6 +24,7 @@ class Account extends Model
         'clean_title',
         'current_balance',
         'initial_balance',
+        'type',
     ];
 
     protected $casts = [

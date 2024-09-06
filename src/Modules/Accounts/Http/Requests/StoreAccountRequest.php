@@ -3,6 +3,8 @@
 namespace Modules\Accounts\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
+use Modules\Accounts\Enums\AccountType;
 
 class StoreAccountRequest extends FormRequest
 {
@@ -24,6 +26,7 @@ class StoreAccountRequest extends FormRequest
         return [
             'title' => ['required', 'string', 'max:255'],
             'initial_balance' => ['required', 'numeric'],
+            'type' => ['required', 'int', Rule::enum(AccountType::class)],
         ];
     }
 }

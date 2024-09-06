@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('clean_title')->unique();
             $table->decimal('current_balance', 12, 2);
             $table->decimal('initial_balance', 12, 2);
+            $table->unsignedTinyInteger('type');
             $table->softDeletes();
             $table->timestamps();
         });
