@@ -27,6 +27,7 @@ class StoreAccountRequest extends FormRequest
             'title' => ['required', 'string', 'max:255'],
             'initial_balance' => ['required', 'numeric'],
             'type' => ['required', 'int', Rule::enum(AccountType::class)],
+            'bank_id' => ['nullable'],
         ];
     }
 }

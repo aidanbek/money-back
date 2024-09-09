@@ -12,6 +12,7 @@ use Modules\Accounts\Enums\AccountType;
  * @property float $current_balance
  * @property float $initial_balance
  * @property int $type
+ * @property int|null $bank_id
  * @property string $type_title (generated)
  */
 class Account extends Model
@@ -26,6 +27,7 @@ class Account extends Model
         'current_balance',
         'initial_balance',
         'type',
+        'bank_id',
     ];
 
     protected $casts = [

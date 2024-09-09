@@ -17,9 +17,16 @@ return new class extends Migration
             $table->string('clean_title')->unique();
             $table->decimal('current_balance', 12, 2);
             $table->decimal('initial_balance', 12, 2);
+            $table->foreignId('bank_id')->nullable();
             $table->unsignedTinyInteger('type');
             $table->softDeletes();
             $table->timestamps();
+
+            $table->foreign('bank_id')
+                ->on('banks')
+                ->references('id')
+                ->restrictOnUpdate()
+                ->restrictOnDelete();
         });
     }
 
